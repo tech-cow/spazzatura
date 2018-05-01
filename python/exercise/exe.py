@@ -9,7 +9,7 @@ def product(num1, num2):
 
 
 def date(num):
-    """ 44: date display converter
+    """ #44: date display converter
     :param num: <int>
     :return: corresponding date in English
     :rtype: <str>
@@ -111,7 +111,41 @@ def is_palindrome(strr):
     return strr.lower() == strr[::-1].lower()
 
 
+def frequency(arr, term):
+    """ 51: check frequency of a given term in a list
+    :return: frequency that term shows up in arr
+    :rtype: <int>
+    """
+    if not arr:
+        return "arr is None"
+
+    count = 0
+    for item in arr:
+        if item == term:
+            count += 1
+    return count
+
+
+def multiply_even_numbers(arr):
+    """ 52: multiply even numbers within a list
+    :return: product of the even number
+    :rtype: <int>
+    """
+
+    product = 1
+    count = 0
+    for num in arr:
+        if num % 2 == 0:
+            product *= num
+            count += 1
+    if count == 0:
+        return "no even numbers in this list"
+    return product
+
+
+
 if __name__ == '__main__':
-    print(is_palindrome('testing'))
-    print(is_palindrome('amanaplanacanalpanama'))
-    print(is_palindrome('a man a plan a canal Panama'))
+    print(multiply_even_numbers([3,3,3,3,2,2]))
+
+
+# yuzhoujr's github solutions to all exercises
