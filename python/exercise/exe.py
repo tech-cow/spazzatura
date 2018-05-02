@@ -189,12 +189,67 @@ def partition(arr):
         :rtype: <bool>
         """
         return num % 2 == 0
-    return [[item for item in arr if callback(item)],[item for item in arr if not callback(item)]]
+    return [[item for item in arr if callback(item)], [item for item in arr if not callback(item)]]
+
+
+def contains_purple(*args):
+    """ 57: check if str 'purple' is within args
+    :param *args: arbituary type
+    :rtype: <bool>
+    """
+    return True if "purple" in args else False
+
+
+def combine_words(word, **kargs):
+    """ 58: add prefix or suffix to a given word
+    :param word: <str>
+    :param **kargs: key-value pair either queue in or stack in the string.
+    :rtype: <str>
+    """
+    return kargs.get('prefix', '') + word + kargs.get('suffix', '')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 if __name__ == '__main__':
-    print(partition([1, 3, 2, 3, 3, 2, 2, 3, 3, 4]))
+    print(combine_words("hell", prefix="no"))
+    print(combine_words("hell", suffix="no"))
 
 
 
