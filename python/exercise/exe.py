@@ -131,7 +131,6 @@ def multiply_even_numbers(arr):
     :return: product of the even number
     :rtype: <int>
     """
-
     product = 1
     count = 0
     for num in arr:
@@ -143,9 +142,60 @@ def multiply_even_numbers(arr):
     return product
 
 
+def capitalize(strr):
+    """ 53: capitalize first character of a single word
+    :return: same word after modified.
+    :rtype: <str>
+    """
+    return strr[0].upper() + strr[1:]
+
+
+def capitalize2_0(strr):
+    """ 53: capitalize first character of every words
+    :return: same string after modified.
+    :rtype: <str>
+    """
+    arr = strr.split()
+    res = []
+    for word in arr:
+        res.append(word[0].upper() + word[1:])
+    return ' '.join(res)
+
+
+def compact(arr):
+    """ 54: check nullability of item in a list
+    :param arr: array contains both true and None value
+    :return: a list of true value
+    :rtype: <list>
+    """
+    return [item for item in arr if item]
+
+
+def intersection(arr1, arr2):
+    """ 55: return a list contains common items from the two input lists
+    :rtype: <list>
+    """
+    # return [item for item in set(arr1) if item in arr2]
+    return list(set(arr1) & set(arr2))
+
+
+def partition(arr):
+    """ 56: partition a list into two lists based on the boolean callback
+    :rtype: <list of list>
+    """
+    def callback(num):
+        """
+        Check for even numbers
+        :rtype: <bool>
+        """
+        return num % 2 == 0
+    return [[item for item in arr if callback(item)],[item for item in arr if not callback(item)]]
+
+
 
 if __name__ == '__main__':
-    print(multiply_even_numbers([3,3,3,3,2,2]))
+    print(partition([1, 3, 2, 3, 3, 2, 2, 3, 3, 4]))
 
 
-# yuzhoujr's github solutions to all exercises
+
+# yuzhoujr's github solutions to all exercises | star it if you like it !
